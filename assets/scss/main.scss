@@ -12,3 +12,9 @@ body {
     height: calc(100svh - 40px * 2);
     border-radius: 40px;
 }
+
+.app-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
