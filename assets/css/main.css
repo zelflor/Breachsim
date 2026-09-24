@@ -1,0 +1,16 @@
+body {
+  background-color: #F0F8FF;
+}
+
+.page-responsive-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: calc(100svw - 80px);
+  height: calc(100svh - 80px);
+  border-radius: 40px;
+}
+
+/*# sourceMappingURL=main.css.map */
