@@ -17,6 +17,8 @@
 
     const HIGHLIGHT_DELAY = 200;
     const ELEMENT_TIMEOUT = 5000;
+    const CURSOR_APPEAR_DELAY = 500;
+    const CURSOR_REFRESH_DELAY = 300;
 
     let currentSlideIndex = -1;
     let navigationLocked = false;
@@ -107,6 +109,16 @@
         cursor.style.display = visible ? '' : 'none';
     }
 
+    function resetCursor() {
+        setCursorVisibility(false);
+
+        if (typeof AppCursor.reset === 'function') {
+            AppCursor.reset();
+        }
+
+        console.log('[GlobalSlides] Curseur réinitialisé');
+    }
+
     async function moveCursor(targetId) {
         if (!targetId) {
             return;
@@ -138,15 +150,38 @@
         await AppCursor.moveTo(x, y);
     }
 
-    async function updateCursor(config) {
+    async function updateCursor(config, index) {
         if (!config.cursor) {
             setCursorVisibility(false);
+
+            console.log('[GlobalSlides] Curseur → 0, 0');
+
+            await AppCursor.moveTo(0, 0);
+
+            return;
+        }
+
+        await sleep(CURSOR_APPEAR_DELAY);
+
+        if (currentSlideIndex !== index) {
             return;
         }
 
         setCursorVisibility(true);
 
         await moveCursor(config.cursorTarget);
+
+        sleep(CURSOR_REFRESH_DELAY).then(async () => {
+            if (currentSlideIndex !== index) {
+                return;
+            }
+
+            console.log(
+                `[GlobalSlides] Réactualisation du curseur → #${config.cursorTarget}`
+            );
+
+            await moveCursor(config.cursorTarget);
+        });
     }
 
     async function showSlide(index) {
@@ -184,6 +219,8 @@
 
         currentSlideIndex = index;
 
+        resetCursor();
+
         clearActiveHighlights();
 
         activateSlide(slide);
@@ -192,7 +229,7 @@
 
         await AppCursor.ready;
 
-        await updateCursor(config);
+        await updateCursor(config, index);
 
         navigationLocked = false;
 
@@ -275,6 +312,14 @@
             console.log('[GlobalSlides] ArrowLeft');
 
             previous();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        const config = getCurrentSlide();
+
+        if (config?.cursor) {
+            moveCursor(config.cursorTarget);
         }
     });
 
