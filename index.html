@@ -34,126 +34,97 @@
 
     <div class="page-responsive-container">
 
-
-        <div class="test-container">
-            <div class="point" id="a"></div>
-            <div class="point" id="b"></div>
-            <div class="point" id="c"></div>
+        <div class="slide-responsive-container" id="introduction">
+            <h1>Introduction <br> aux <span class="highlight">cyberattaques</span></h1>
         </div>
-        <style>
-            .test-container {
-                width: 100%;
-                height: 100%;
-            }
-            .point {
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                background: black;
-                border-radius: 50%;
-            }
-            #a {
-                left: 80%;
-                top: 20%;
-            }
-            #b {
-                left: 10%;
-                top: 20%;
-            }
-            #c {
-                left: 60%;
-                top: 80%;
-            }
+        <div class="slide-responsive-container" id="statcompany">
+            <h2><span class="highlight">Qu'est-ce que représentent les cyberattaques</span> <br> aujourd'hui ?</h2>
 
-            .point::before,
-            .point::after {
-                content: "";
-                position: absolute;
-                background: black;
-            }
-
-            .point::before {
-                width: 24px;
-                height: 2px;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            .point::after {
-                width: 2px;
-                height: 24px;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-        </style>
-        <script>
-            (() => {
-            if (!window.AppCursor) {
-                console.warn('[tour] AppCursor introuvable : charge cursor.js avant tour.js');
-                return;
-            }
-
-            const ids = ['a', 'b', 'c'];
-            const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-
-            async function waitFor(id, timeout = 5000) {
-                const t0 = Date.now();
-                while (Date.now() - t0 < timeout) {
-                const el = document.getElementById(id);
-                if (el) return el;
-                await sleep(100);
-                }
-                return null;
-            }
-
-            let running = false;
-
-
-            async function start({ laps = Infinity, pause = 400 } = {}) {
-                if (running) return;
-                running = true;
-
-                await AppCursor.ready;
-                console.log('[tour] départ');
-
-                for (let lap = 0; lap < laps && running; lap++) {
-                for (const id of ids) {
-                    if (!running) break;
-
-                    const el = await waitFor(id);
-                    if (!el) {
-                    console.warn(`[tour] #${id} introuvable`);
-                    continue;
-                    }
-
-                    const { left, top } = el.getBoundingClientRect();
-                    console.log(`[tour] -> #${id}`, { left, top });
-
-                    const arrived = await AppCursor.moveTo(left, top);
-                    if (!arrived) { running = false; break; } 
-                    await sleep(pause);
-                }
-                }
-
-                running = false;
-            }
-
-            function stop() {
-                running = false;
-            }
-
-            window.AppTour = { start, stop };
-
-            start({ laps: 3 });
-            })();
-        </script>
-
+            <div class="div-flex-graphic">
+                <svg xmlns="http://www.w3.org/2000/svg" width="450" height="450" viewBox="0 0 450 450" fill="none">
+                    <path  d="M225 0C272.515 -2.07696e-06 318.811 15.0424 357.252 42.9712C395.692 70.9 424.305 110.281 438.988 155.471C453.671 200.661 453.671 249.339 438.988 294.529C424.305 339.719 395.692 379.1 357.252 407.029C318.811 434.958 272.515 450 225 450C177.485 450 131.189 434.958 92.7483 407.029C54.3076 379.1 25.6953 339.719 11.0123 294.529C-3.67076 249.339 -3.67076 200.661 11.0123 155.471L225 225L225 0Z" fill="#FFBFBF"/>
+                    <path class="effect-animation-bump" d="M11.0123 155.471C25.6953 110.281 54.3076 70.9 92.7483 42.9712C131.189 15.0424 177.485 -5.66615e-07 225 0V225L11.0123 155.471Z" fill="#EBEBEB"/>
+                </svg>
+                <p><span class="highlight">8 entreprises sur 10</span></p>
+            </div>
+        </div>
+        <div class="slide-responsive-container" id="statcompany2">
+            <h2><span class="highlight">Qu'est-ce que représentent les cyberattaques</span> <br> aujourd'hui ?</h2>
+            <div class="div-flex-graphic">
+                <div class="div-flex-elements">
+                    <div class="div-column">
+                        <div class="div-visual-1 highlight"></div>
+                        <p>10%</p>
+                    </div>
+                    <div class="div-column">
+                        <div class="div-visual-2 highlight"></div>
+                        <p>90%</p>
+                    </div>
+                </div>
+                <h3><span class="highlight">violations de données</span> sont dues à une erreur humaine</h3>
+            </div>
+        </div>
+        <div class="slide-responsive-container" id="introsimu">
+            <h1>Voici une simulation de certaines  <br>  <span class="highlight">cyberattaques</span></h1>
+        </div>
 
 
     
     </div>
-      
+    <script>
+        window.slidesConfig = [
+            {
+                id: 'introduction',
+                cursor: false
+            },
+            {
+                id: 'statcompany',
+                cursor: false
+            },
+            {
+                id: 'statcompany2',
+                cursor: false
+            },
+            {
+                id: 'introsimu',
+                cursor: false
+            },
+            {
+                id: 'slide-3',
+                cursor: true,
+                cursorTarget: 'b'
+            },
+            {
+                id: 'slide-4',
+                cursor: true,
+                cursorTarget: 'c'
+            }
+        ];
+    </script>
+
+    <script src="./assets/js/global-slides.js"></script>
+
+    <script>
+        (() => {
+            if (!window.AppSlides) {
+                console.error('[Slides] AppSlides introuvable');
+                return;
+            }
+
+            AppSlides.start();
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    AppSlides.next();
+                }
+
+                if (event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    AppSlides.previous();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

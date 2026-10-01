@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
 body {
   background-color: #F0F8FF;
 }
@@ -17,6 +30,183 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+}
+
+.slide-responsive-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.slide-responsive-container#introduction h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+  font-family: Sora;
+  font-size: 96px;
+  font-style: normal;
+  width: 100%;
+  font-weight: 400;
+  line-height: normal;
+}
+.slide-responsive-container#statcompany h2 {
+  position: absolute;
+  color: #000;
+  left: 60px;
+  top: 60px;
+  font-family: Sora;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.slide-responsive-container#statcompany .div-flex-graphic {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 67px;
+}
+.slide-responsive-container#statcompany .div-flex-graphic p {
+  color: #000;
+  text-align: center;
+  font-family: Sora;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.slide-responsive-container#statcompany2 h2 {
+  position: absolute;
+  color: #000;
+  left: 60px;
+  top: 60px;
+  font-family: Sora;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic {
+  position: absolute;
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 87px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100px;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements {
+  display: flex;
+  align-items: flex-end;
+  gap: 39px;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column p {
+  align-self: stretch;
+  color: #000;
+  text-align: center;
+  font-family: Sora;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column .div-visual-1 {
+  position: relative;
+  width: 125px;
+  height: 0svh;
+  background: #EBEBEB;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column .div-visual-1.active {
+  transition: 500ms ease-in-out;
+  transition-delay: 1s !important;
+  height: 5svh;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column .div-visual-2 {
+  position: relative;
+  width: 125px;
+  height: 0svh;
+  align-self: stretch;
+  opacity: 0.2;
+  transition: 500ms ease-in-out;
+  transition-delay: 1s !important;
+  background: #F00;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic .div-flex-elements .div-column .div-visual-2.active {
+  transition: 500ms ease-in-out;
+  transition-delay: 1s !important;
+  height: 50svh;
+}
+.slide-responsive-container#statcompany2 .div-flex-graphic h3 {
+  color: #000;
+  font-family: Sora;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 607px;
+}
+.slide-responsive-container#introsimu h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+  font-family: Sora;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+.slide-responsive-container.active {
+  display: block;
+}
+
+span.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+span.highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  transition: 500ms ease-in-out;
+  height: 50%;
+  opacity: 0.25;
+  background: #F00;
+  z-index: -1;
+}
+
+span.highlight.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 500ms ease-in-out;
+  width: 100%;
+  height: 50%;
+  opacity: 0.25;
+  background: #F00;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=main.css.map */
