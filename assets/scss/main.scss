@@ -39,6 +39,59 @@ body {
     display: none;
     width: 100%;
     height: 100%;
+    &#unite {
+        .unite-div {
+            position: absolute;
+            left: 2%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 575.0px;
+            height: 810.5px;
+            .unite-img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .part-roblox {
+                position: absolute;
+                left: 322px;
+                top: 196.5px;
+                width: 71.5px;
+                height: 27.0px;
+
+            }
+            .usb {
+                width: 46px;
+                height: 122.5px;
+                top: 95px;
+                left: 340px;
+                position: absolute;
+
+                animation: usb-entry 0.8s ease-out forwards;
+            }
+
+            @keyframes usb-entry {
+                from {
+                    top: 20px;
+                    opacity: 0;
+                }
+
+                to {
+                    top: 95px;
+                    opacity: 1;
+                }
+            }
+            .cache-bg {
+                width: 130.0px;
+                position: absolute;
+                background: #686868;
+                left: 288px;
+                top: 164px;
+                height: 60.0px;
+
+            }
+        }
+    }
     &#introduction {
         h1 {
             position: absolute;
@@ -786,6 +839,44 @@ body {
 
         }
       }
+    }
+
+    &#bsod {
+        .container-blue {
+            position: absolute;
+            display: flex;
+            width: calc(100% - 120px * 2);
+            height: calc(100% - 120px * 2);
+            padding: 120px;
+
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 50px;
+            flex-shrink: 0;
+            border-radius: 40px;
+            background: #005;
+            h1 {
+                color: #FFF;
+                font-family: Sora;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                width: calc(85%);
+
+            }
+            h2 {
+                color: #FFF;
+                font-family: Sora;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                
+                width: calc(85%);
+
+            }
+        }
     }
 
 
