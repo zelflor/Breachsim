@@ -411,6 +411,146 @@ body {
     }
 
      &#email2 {
+
+        .div-download-display-flex {
+                position: absolute;
+                right: 12%;
+                top: 5%;
+                z-index: 2;
+
+                display: inline-flex;
+                width: calc(392px - 26px * 2);
+                height: calc(105px - 24px * 2);
+                padding: 24px 26px;
+
+                align-items: center;
+                gap: 10px;
+
+                border-radius: 14px;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                background: #E4EBF2;
+
+                opacity: 0;
+                transform: translateY(-20px);
+                animation: download-appear 0.6s ease-out 2s forwards;
+
+                .div-icon-container {
+                    display: flex;
+                    padding: 5px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    border-radius: 999px;
+                }
+
+                .div-content-flex {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    p {
+                        align-self: stretch;
+
+                        color: #000;
+                        text-align: right;
+                        font-family: Sora;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+
+                    .div-progress-bar {
+                        width: 100%;
+                        height: 5px;
+
+                        background-color: #E4EBF2;
+
+                        .div-color {
+                            width: 0;
+                            height: 100%;
+
+                            background-color: #5F42FF;
+
+                            animation: download-progress 4s 2.6s forwards;
+                        }
+                    }
+                }
+            }
+
+
+            @keyframes download-appear {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+
+            @keyframes download-progress {
+                0% {
+                    width: 0%;
+                }
+
+                10% {
+                    width: 8%;
+                }
+
+                18% {
+                    width: 14%;
+                }
+
+                27% {
+                    width: 25%;
+                }
+
+                35% {
+                    width: 29%;
+                }
+
+                43% {
+                    width: 43%;
+                }
+
+                51% {
+                    width: 47%;
+                }
+
+                60% {
+                    width: 62%;
+                }
+
+                68% {
+                    width: 67%;
+                }
+
+                76% {
+                    width: 78%;
+                }
+
+                84% {
+                    width: 81%;
+                }
+
+                92% {
+                    width: 94%;
+                }
+
+                100% {
+                    width: 100%;
+                }
+            }
+
+
       .div-window-container {
         .div-sidebar-mail {
             display: flex;
@@ -468,7 +608,183 @@ body {
                 }
             }
         }
-        
+        .div-flex-container-mail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 0 0;
+            align-self: stretch;
+            background: #F0F8FF;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: 300ms ease-in-out;
+            &.active {
+                transform: translateY(0px);
+                opacity: 1;
+                transition: 300ms ease-in-out;
+            }
+            .div-header-mail {
+                display: flex;
+                padding: 15px 10px;
+                align-items: flex-start;
+                gap: 10px;
+                align-self: stretch;
+                background: #FFF;
+                .div-profile {
+                    width: 68.0px;
+                    height: 68.0px;
+                    border-radius: 999px;
+                    background: #E4EBF2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p {
+                        color: #000;
+                        text-align: center;
+                        font-family: Sora;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+
+                    }
+                }
+                .div-flex-column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                    p {
+                        color: #000;
+                        text-align: right;
+                        font-family: Sora;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        opacity: 1;
+                        line-height: normal;
+
+                    }
+                    .div-flex {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 10px;
+                            align-self: stretch;
+                            h2 {
+                                color: #000;
+                                text-align: right;
+                                font-family: Sora;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+
+                            }
+                            p {
+                                color: #000;
+                                text-align: right;
+                                font-family: Sora;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 300;
+                                line-height: normal;
+                                opacity: 0.8;
+
+                            }
+
+                    }
+
+                }
+            }
+            .div.container-flex-mail {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 23px;
+                align-self: stretch;
+                h2 {
+                    color: #02F;
+                    text-align: center;
+                    font-family: Sora;
+                    font-size: 28px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                }
+                h4 {
+                    color: #02F;
+                    font-family: Sora;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                }
+                button {
+                    border: none;
+                    outline: none;
+                    display: flex;
+                    padding: 25px 50px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 12px;
+                    border-radius: 25px;
+                    background: linear-gradient(180deg, #0A8621 0%, #3C462A 86.22%);
+                    box-shadow: 0 0 11.6px 15px rgba(0, 0, 0, 0.08) inset;
+                    .div-title {
+                        display: flex;
+                        align-items: center;
+                        gap: 25px;
+                        img  {
+                            width: 51.0px;
+                            height: 51.0px;
+                            object-fit: cover;
+
+                        }
+                        h2 {
+                            color: #FFF;
+                            text-align: right;
+                            font-family: Sora;
+                            font-size: 36px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+
+                        }
+
+                    }
+                    .div-bot {
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+                        gap: 10px;
+                        p {
+                            color: #FFF;
+                            text-align: right;
+                            font-family: Sora;
+                            font-size: 24px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+
+                        }
+                        .div-flex {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 10px;
+                            flex: 1 0 0;
+
+                        }
+
+                    }
+                }
+
+            }
+
+        }
       }
     }
 
