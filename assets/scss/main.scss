@@ -462,8 +462,8 @@ body {
         }
       }
     }
-
-     &#email2 {
+    &#cmd,
+    &#email2 {
 
         .div-download-display-flex {
                 position: absolute;
@@ -880,7 +880,358 @@ body {
     }
 
 
+    &#cmd {
+        .cmdweird {
+              position: absolute;
+                transform: scale(0);
+                transform-origin: center center;
+                opacity: 0;
+                animation: cmd-open-close 1.5s ease-in-out forwards;
 
+                border: 4px solid rgba(0, 0, 0, 0.801);
+            .div-window-header-nav {
+                background-color: #141414;
+            }
+            .div-window-container{
+                background-color: black;
+                position: relative;
+                
+                p {
+                    position: absolute;
+                    left: 10px;
+                    top: 10px;
+                    font-family: 'Sora';
+                    color: white;
+                }
+            }
+        } 
+        #cmdweird1 {
+            z-index: 1;
+            top: 0;
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        #cmdweird2 {
+            z-index: 2;
+            top: 15px;
+            left: 20px;
+            animation-delay: 0.25s;
+        }
+
+        #cmdweird3 {
+            z-index: 3;
+            top: 30px;
+            left: 40px;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes cmd-open-close {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                transform: scale(0.85);
+                opacity: 1;
+            }
+            35% {
+                transform: scale(0.85);
+                opacity: 1;
+            }
+
+            40% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes ransomeware-open-close {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .ransomewareui {
+            
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            z-index: 2;
+            border-radius: 40px;
+            height: 100%;
+            background-color: rgb(92, 0, 0);
+            
+               animation: ransomeware-open-close 0.1s ease-in-out forwards;
+                animation-delay: 2s;
+               transform: scale(0);
+                opacity: 0;
+            .side-bar {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                height: calc(100% - 25px *2);
+                align-items: center;
+                padding: 25px;
+                width: 350px;
+                .icon-ware {
+                    width: 156px;
+                    height: 156px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    justify-content: center;
+                    aspect-ratio: 1 / 1;
+                    background-color: rgba(255, 0, 0, 0.527);
+                    border-right: 5px solid #fcfcfc;
+                    border-top: 5px solid #fcfcfc;
+                    border-left: 5px solid #555;
+                    border-bottom: 5px solid #555;
+                    overflow: hidden;
+                    &::before {
+                        content: '';
+                        width: 250px;
+                        height: 250px;
+                        border-radius: 999px;
+                        background-color: white;
+                        opacity: .5;
+                        position: absolute;
+                        top: -110%;
+                        left: 35%;
+                        transform: translateX(-50%);
+                    }
+                    svg {
+                        
+                        aspect-ratio: 1 / 1;
+                        width: 128px;
+                        height: 128px;
+                        path {
+                            fill: white;
+                        }
+                    }
+                }
+
+                .payment-remain {
+                    width: calc(100% - 25px * 2);
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding: 25px;
+                    border: #fff 2.5px solid;
+                    p.title {
+                        color: yellow;
+                        width: 100%;
+                        text-align: center;
+                        font-family: 'Sora';
+                    }
+                    p.date {
+                        color: white;
+                        width: 100%;
+                        text-align: center;
+                        font-family: 'Sora';
+                    }
+                    .div-flex-remain-time {
+                        display: flex;
+                        align-items: center;
+                        gap: 0px;
+                        padding-top: 10px;
+                        flex-direction: column;
+                        p.sub {
+                            color: white;
+                            width: 100%;
+                            text-align: center;
+                            font-family: 'Sora';
+                        } 
+                        p.time-chono {
+                            font-size: 40px;
+                            color: white;
+                            font-family: 'Courier New', Courier, monospace;
+                        }
+                    }
+                }
+                .div-a-flex {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 25px;
+                    flex: 1 0 0;
+                    a {
+                        opacity: 0.8;
+                        text-decoration: underline;
+                        color: cyan;
+                        font-family: "Sora";
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .content-ware {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                height: calc(100% - 25px *2);
+                padding: 25px;
+                flex: 1 0 0;
+                h4 {
+                    font-family: "Sora";
+                    font-size: 25px;
+                    font-weight: 300;
+                    color: white;
+                }
+                .div-flex-scroll-content {
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 900px;
+                    overflow-y: scroll;
+                    background-color: rgb(226, 226, 226);
+                    border-right: 5px solid #fcfcfc;
+                    border-top: 5px solid #fcfcfc;
+                    border-left: 5px solid #555;
+                    border-bottom: 5px solid #555;
+                    max-height: 550px;
+
+                    & {
+                    --sb-track-color: #ffffff;
+                    --sb-thumb-color: #888888;
+                    --sb-size: 14px;
+                    }
+
+                    &::-webkit-scrollbar {
+                    width: var(--sb-size);
+                    }
+
+                    &::-webkit-scrollbar-track {
+                    background: var(--sb-track-color);
+                    border-radius: 1px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                    background: var(--sb-thumb-color);
+                    border-radius: 1px;
+                    border-right: 2px solid #adadad;
+                    border-top: 2px solid #adadad;
+                    border-left: 2px solid #555;
+                    border-bottom: 2px solid #555;
+                    }
+
+                    @supports not selector(::-webkit-scrollbar) {
+                    & {
+                        scrollbar-color: var(--sb-thumb-color)
+                                        var(--sb-track-color);
+                    }
+                    }
+                    h4 {
+                        font-size: 25px;
+                        color: rgb(7, 89, 211);
+                        font-family: 'Sora';
+                    }
+                    p {
+                        color: black;
+                        font-size: 16px;
+                        padding: 35px 0px;
+                        padding-left: 25px;
+                        
+                        font-family: 'Sora';
+                        span {
+                            color: red;
+                        }
+                        &.italic {
+                            font-style: italic;
+                        }
+                    }
+                }
+
+                .bitcoin-address {
+                    width: calc(100% - 25px * 2);
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px;
+                    max-width: calc(900px - 25px * 2);
+                    padding: 25px;
+
+                    border: #fff 2.5px solid;
+                    img {
+                        height: 64px;
+                    }
+                    .div-flex-cl {
+                        flex: 1 0 0;
+                        flex-direction: column;
+                        display: flex;
+                        
+                        gap: 10px;
+                        .div-flex {
+                            p {
+                             color: yellow;
+                            width: 100%;
+                            font-size: 20px;
+                            text-align: left;
+                            font-family: 'Sora';
+                            }
+                            a {
+                                opacity: 0.8;
+                                width: 100px;
+                                text-decoration: underline;
+                                color: cyan;
+                                font-family: "Sora";
+                            }
+                            align-items: center;
+                            flex-direction: row;
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
+                            input {
+                                background: transparent;
+                                padding: 10px;
+                                color: white;
+                                font-size: 16px;
+                                flex: 1 0 0;
+                            }
+                            button {
+                                height: 100%;
+                                font-size: 16px;
+                                border-right: 2px solid #fcfcfc;
+                                border-top: 2px solid #fcfcfc;
+                                border-left: 2px solid #555;
+                                border-bottom: 2px solid #555;
+                            }
+                        }
+                    }
+                }
+
+                .btns-flex {
+                     max-width: 900px;
+                     width: 100%;
+                     flex-direction: row;
+                     display: flex;
+                     gap: 32px;
+                     button {
+                          height: 30px;
+                          flex: 1 0 0;
+                          font-size: 16px;
+                            border-right: 3.5px solid #fcfcfc;
+                            border-top: 3.5px solid #fcfcfc;
+                            border-left: 3.5px solid #555;
+                            border-bottom: 3.5px solid #555;
+                     }
+                }
+            }
+        }
+    }
 
 
 
