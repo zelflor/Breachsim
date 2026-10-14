@@ -86,7 +86,7 @@ body {
   top: 164px;
   height: 60px;
 }
-.slide-responsive-container#introduction h1 {
+.slide-responsive-container#concequence h1, .slide-responsive-container#seperation h1, .slide-responsive-container#introduction h1 {
   position: absolute;
   left: 50%;
   top: 50%;
